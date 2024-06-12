@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChatGPT</title>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h3>Chat GPT</h3>
+    </div>
     <main>
-        <ul>
-            
-        </ul>
+      <ul>
+        <li class="loading">
+          <i></i>
+          <div class="container">
+            <img src="img/robot2.gif" alt="GIF divertido" />
+          </div>
+          <p>Cargando... Esto puede tardar un poco</p>
+        </li>
+      </ul>
     </main>
-    <form >
-        <input type="text" placeholder="Escribe tu pregunta aquí...">
-        <button type="submit" disabled>Enviar</button>
+    <form>
+      <input type="text" placeholder="Escribe tu pregunta aquí..." />
+      <button type="submit" disabled>Enviar</button>
     </form>
 
+    <!-- 
     <small>&nbsp;</small>
-
+         -->
+    <footer>
+      <div class="info">
+        Maria Cavaller
+        <a href="https://github.com/macamer">
+          <img src="img/MingcuteGithubLine.svg" alt="gitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/maria-cavaller-mercadal-a36435172/">
+            <img src="img/UilLinkedinAlt.svg" alt="gitHub" />
+          </a>
+      </div>
+      <div class="js">Javascript-100-proyectos - midudev</div>
+    </footer>
     <template id="message-template">
-        <li class="message">
-            <span></span>
-            <p></p>
-        </li>
+      <li class="message">
+        <span></span>
+        <p></p>
+      </li>
     </template>
     <script src="chat.js" type="module"></script>
-</body>
+  </body>
 </html>

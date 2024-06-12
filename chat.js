@@ -1,5 +1,6 @@
 //importar AI
-import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm";
+//import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm"; --> sin workers
+import { CreateWebWorkerMLCEngine } from "https://esm.run/@mlc-ai/web-llm"
 
 //crear jquery
 const $ = (el) => document.querySelector(el);
@@ -13,13 +14,16 @@ const $template = $("#message-template");
 const $messages = $("ul");
 const $container = $("main");
 const $button = $("button");
-const $info = $("small");
+//const $info = $("small");
+const $loading = $('.loading')
 
 let messages = [];
 
 //cargar modelo
-const SELECTED_MODEL = "gemma-2b-it-q4f32_1-MLC";
-//Llama-3-8B-Instruct-q4f32_1-MLC-1k
+const SELECTED_MODEL = "Llama-3-8B-Instruct-q4f32_1-MLC-1k";
+//Llama-3-8B-Instruct-q4f32_1-MLC-1k  gemma-2b-it-q4f32_1-MLC
+
+/*
 const engine = await CreateMLCEngine(SELECTED_MODEL, {
   initProgressCallback: (info) => {
     //console.log("initProgressCallback", info);
@@ -28,7 +32,23 @@ const engine = await CreateMLCEngine(SELECTED_MODEL, {
       $button.disabled = false;
     }
   },
-});
+});*/
+
+const engine = await CreateWebWorkerMLCEngine(
+    new Worker('./worker.js', { type: 'module' }),
+    SELECTED_MODEL,
+    {
+      initProgressCallback: (info) => {
+        //$info.textContent = `${info.text}%`
+        if (info.progress === 1) {
+          $loading.parentNode.removeChild($loading)
+          $button.removeAttribute('disabled')
+          addMessage("¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?", 'bot')
+          $input.focus()
+        }
+      }
+    }
+  )
 
 $form.addEventListener("submit", async (e) => {
   e.preventDefault();

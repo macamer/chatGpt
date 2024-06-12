@@ -1,0 +1,206 @@
+body {
+    font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #ffffe1, #82aaef);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+main {
+    width: 500px;
+    max-width: 85dvw;
+    height: 60vh;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    transition: box-shadow 0.3s ease;
+}
+
+main:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    transition: background 0.3s ease, border 0.3s ease;
+
+    span {
+        width: 40px;
+        height: 40px;
+        background: #f0f0f0;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-top: 8px;
+    }
+
+    &.user {
+        align-self: flex-end;
+        align-items: flex-end;
+
+        span {
+            /*
+            background: #05052a;
+            */
+            background: black;
+            color: #fff;
+        }
+
+        p {
+            /*
+            background: #ebebfb;
+            border: 1px solid #b4b4fd;
+            */
+            background-color: #797979;
+            color: white;
+        }
+    }
+
+    &.bot {
+        align-self: flex-start;
+
+        span {
+            background: #202059;
+            color: #fff;
+        }
+
+        p {
+            border: 1px solid #848482;
+        }
+    }
+}
+
+form {
+    display: flex;
+
+    input {
+        border-radius: 8px;
+        flex-grow: 1;
+        border: 0;
+        padding: 12px;
+        margin-right: 8px;
+        border: 1px solid #ccc;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #0068ad;
+        box-shadow: 0 0 6px rgba(0, 104, 173, 0.4);
+        outline: none;
+    }
+
+    button {
+        background: #0a2f48;
+        border-radius: 8px;
+        border: 0;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        padding: 12px;
+        transition: background 0.3s ease, transform 0.3s ease;
+
+        &[disabled] {
+            background: #ccc;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: #0068ad;
+        }
+    }
+}
+
+footer {
+    font-size: 10px;
+    color: #555;
+    opacity: 0.7;
+    position: fixed;
+    bottom: 0;
+    width: 100dvw;
+    display: flex; /* Usar flexbox para la disposición */
+    align-items: center; /* Alinear los elementos verticalmente al centro */
+    justify-content: space-between; /* Espaciar elementos a izquierda y derecha */
+    padding: 4px ; /* Espaciado interno */
+    background-color: #f0f0f0; /* Color de fondo */
+    border-top: 1px solid #ccc; /* Borde superior */
+
+    .info{
+        margin-left: 10px;
+    }
+    a{
+        margin-left: 10px;
+    }
+
+    img{
+        cursor: pointer;
+        padding-left: 5px;
+        width: 10px;
+    }
+
+    .js{
+        margin-right: 50px;
+    }
+    
+}
+
+.loading {
+    padding-top: 4em;
+    display: grid;
+    place-content: center;
+
+    div {
+        text-align: center;
+
+        img {
+            width: 100px;
+            max-width: 30dvw;
+            max-height: 30dvw;
+        }
+    }
+
+    p {
+        margin-top: 3em;
+    }
+}
+.title{
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    
+    h3{
+        margin: 0;
+        padding-bottom: 8px;
+    }
+
+}
+
