@@ -114,3 +114,14 @@ form {
         }
     }
 }
+
+small {
+    font-size: 10px;
+    color: #555;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+}
