@@ -40,6 +40,7 @@ const engine = await CreateWebWorkerMLCEngine(
     {
       initProgressCallback: (info) => {
         //$info.textContent = `${info.text}%`
+        console.log(info.text)
         if (info.progress === 1) {
           $loading.parentNode.removeChild($loading)
           $button.removeAttribute('disabled')
